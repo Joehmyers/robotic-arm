@@ -7,6 +7,7 @@
 # Do this before assembly, with one motor plugged in at a time, as LeRobot
 # prompts. Write the result in docs/hardware.md.
 set -euo pipefail
+# shellcheck source=scripts/lib.sh
 source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 role="$(arm_role "${1:-}")"

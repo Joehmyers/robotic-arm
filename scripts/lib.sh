@@ -52,6 +52,7 @@ camera_args=()
 build_camera_args() {
   camera_args=()
   if [[ -n "${CAMERA_INDEX:-}" ]]; then
+    # shellcheck disable=SC2034  # read by the scripts that source this file
     camera_args=(
       "--robot.cameras={ ${CAMERA_NAME:-front}: {type: opencv, index_or_path: ${CAMERA_INDEX}, width: ${CAMERA_WIDTH:-640}, height: ${CAMERA_HEIGHT:-480}, fps: ${CAMERA_FPS:-30}}}"
     )

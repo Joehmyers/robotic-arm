@@ -7,6 +7,7 @@
 # LeRobot saves <arm id>.json in calibration/. Commit that file. Calibrate the
 # leader and the follower separately, and again after any rebuild or swap.
 set -euo pipefail
+# shellcheck source=scripts/lib.sh
 source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 role="$(arm_role "${1:-}")"

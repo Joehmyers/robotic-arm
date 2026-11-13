@@ -4,6 +4,7 @@
 #
 # Usage: scripts/teleoperate.sh
 set -euo pipefail
+# shellcheck source=scripts/lib.sh
 source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 require FOLLOWER_PORT FOLLOWER_ID LEADER_PORT LEADER_ID

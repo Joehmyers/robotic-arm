@@ -8,6 +8,7 @@
 # LeRobot's cache folder. Run `huggingface-cli login` first, so LeRobot can
 # upload it to Hugging Face. Do not copy datasets into this repo.
 set -euo pipefail
+# shellcheck source=scripts/lib.sh
 source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 require FOLLOWER_PORT FOLLOWER_ID LEADER_PORT LEADER_ID HF_USER DATASET_NAME TASK_DESCRIPTION
