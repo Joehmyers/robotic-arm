@@ -8,14 +8,14 @@
   // On rename: update "name" and each "bucket_name" below to match the new
   // repository name so the config keeps matching the R2 bucket.
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "template-repo",
+  "name": "robotic-arm",
   "compatibility_date": "2026-07-16",
 
   // R2 bucket binding. Access it from a Worker as `env.BUCKET`.
   "r2_buckets": [
     {
       "binding": "BUCKET",
-      "bucket_name": "template-repo"
+      "bucket_name": "robotic-arm"
     }
   ]
 

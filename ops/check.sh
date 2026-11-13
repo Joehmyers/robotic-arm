@@ -31,7 +31,7 @@ cd "$repo_root" || exit 1
 
 # --- Configure your project here -------------------------------------------
 : "${CHECK_LINT:=}"    # e.g. npm run lint       / ruff check .      / cargo clippy
-: "${CHECK_TEST:=}"    # e.g. npm test           / pytest            / cargo test
+: "${CHECK_TEST:=bash tests/test_scripts.sh}"   # runs each arm script in dry-run mode
 : "${CHECK_BUILD:=}"   # e.g. npm run build      / python -m build   / cargo build
 # ---------------------------------------------------------------------------
 

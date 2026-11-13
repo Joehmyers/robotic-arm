@@ -62,3 +62,31 @@ assets/
 tests/fixtures/**/.env
 tests/fixtures/**/.env.*
 !tests/fixtures/**/.env.example
+
+# --- Robot arm project -------------------------------------------------------
+# The real machine config (ports differ per computer); the .example is committed.
+config/machine.env
+
+# Hugging Face access token and login files. Never commit these.
+.huggingface/
+huggingface/
+hf_token*
+*.token
+
+# Recorded datasets: large. Store them on Hugging Face (scripts/record.sh uploads them).
+datasets/
+dataset/
+*.parquet
+*.mp4
+*.avi
+
+# Trained models: large. Store them on Hugging Face.
+outputs/
+checkpoints/
+models/
+wandb/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
