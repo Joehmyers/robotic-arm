@@ -19,8 +19,10 @@ ops/check.sh
 # Install dependencies (also runs automatically via SessionStart hook)
 ops/setup.sh
 
-# Run locally
-<fill-in>
+# Run the arms (see README.md; copy config/machine.env.example first)
+scripts/calibrate.sh follower|leader
+scripts/teleoperate.sh
+scripts/record.sh
 
 # Create the project's Cloudflare R2 bucket (wrangler; bucket = repo name)
 ops/create-bucket.sh [bucket-name]
@@ -41,6 +43,9 @@ read means the answer to "is this green?" cannot drift between them.
 
 ## Architecture
 
+- `scripts/`: run scripts for the arms (read `config/machine.env`; `DRY_RUN=1` prints the command)
+- `config/`: per-computer settings (`machine.env` is gitignored)
+- `calibration/`: committed calibration files, one per arm
 - `src/`: product source code
 - `tests/`: test suite (the agent's verification target)
 - `tests/fixtures/`: files tests read as input or compare output against;
